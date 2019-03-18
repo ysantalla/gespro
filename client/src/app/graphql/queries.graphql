@@ -1,0 +1,612 @@
+query pagos(
+  $where: PagoWhereInput
+  $orderBy: PagoOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  pagos(
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+      id
+      integrante {
+        id
+        usuario {
+          id
+          fullname
+          employeeNumber
+        }
+      }
+      mes {
+        id
+        nombre
+      }
+      anno {
+        id
+        numero
+      }
+      horas
+      presencia
+      incidencia
+      relevancia
+      complejidad
+      gestion
+      vinculacion
+      calidad
+      significacion
+      cumplimiento
+      calculo
+  }
+}
+
+query existUser($where: UserWhereInput) {
+  existUser(where: $where)
+}
+
+query pago($id: String!) {
+  pago(id: $id) {
+    id
+    integrante {
+      id
+      usuario {
+        id
+        fullname
+        employeeNumber
+      }
+    }
+    mes {
+      id
+      nombre
+    }
+    anno {
+      id
+      numero
+    }
+    horas
+    presencia
+    incidencia
+    relevancia
+    complejidad
+    gestion
+    vinculacion
+    calidad
+    significacion
+    cumplimiento
+    calculo
+  }
+}
+
+query integrantes(
+  $where: IntegranteWhereInput
+  $orderBy: IntegranteOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  integrantes(
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+      id
+      proyecto {
+        id
+        codigo
+      }
+      usuario {
+        id
+        firstname
+        lastname
+        fullname
+        email
+        username
+        employeeNumber
+        roles {
+          id
+          name
+        }
+      }
+      jefeProyecto
+      pagos {
+        id
+        integrante {
+          id
+          usuario {
+            id
+            fullname
+            employeeNumber
+          }
+        }
+        mes {
+          id
+          nombre
+        }
+        anno {
+          id
+          numero
+        }
+        horas
+        presencia
+        incidencia
+        relevancia
+        complejidad
+        gestion
+        vinculacion
+        calidad
+        significacion
+        cumplimiento
+        calculo
+      }
+  }
+}
+
+query integrante($id: String!) {
+  integrante(id: $id) {
+    id
+    proyecto {
+      id
+      codigo
+    }
+    usuario {
+      id
+      firstname
+      lastname
+      fullname
+      email
+      username
+      employeeNumber
+      roles {
+        id
+        name
+      }
+    }
+    jefeProyecto
+    pagos {
+      id
+      integrante {
+        id
+        usuario {
+          id
+          fullname
+          employeeNumber
+        }
+      }
+      mes {
+        id
+        nombre
+      }
+      anno {
+        id
+        numero
+      }
+      horas
+      presencia
+      incidencia
+      relevancia
+      complejidad
+      gestion
+      vinculacion
+      calidad
+      significacion
+      cumplimiento
+      calculo
+    }
+  }
+}
+
+query annos(
+  $where: AnnoWhereInput
+  $orderBy: AnnoOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  annos(
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    numero
+    habilitado
+  }
+}
+
+query meses(
+  $where: MesWhereInput
+  $orderBy: MesOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  meses(
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    nombre
+    habilitado
+  }
+}
+
+query alcance($id: String!) {
+  alcance(id: $id) {
+    id
+    nombre
+    valor
+  }
+}
+
+query alcances {
+  alcances {
+    id
+    nombre
+    valor
+  }
+}
+
+query area($id: String!) {
+  area(id: $id) {
+    id
+    nombre
+  }
+}
+
+query areas {
+  areas {
+    id
+    nombre
+  }
+}
+
+query eje($id: String!) {
+  eje(id: $id) {
+    id
+    nombre
+  }
+}
+
+query ejes (
+  $where: EjeWhereInput
+  $orderBy: EjeOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  ejes (
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    nombre
+  }
+}
+
+query linea($id: String!) {
+  linea(id: $id) {
+    id
+    nombre
+  }
+}
+
+query lineas (
+  $where: LineaWhereInput
+  $orderBy: LineaOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  lineas (
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    nombre
+  }
+}
+
+query tipo($id: String!) {
+  tipo(id: $id) {
+    id
+    nombre
+  }
+}
+
+query tipos {
+  tipos {
+    id
+    nombre
+  }
+}
+
+query proyecto($id: String!) {
+  proyecto(id: $id) {
+    id
+    codigo
+    nombre
+    inicia
+    finaliza
+    area {
+      id
+      nombre
+    }
+    eje {
+      id
+      nombre
+    }
+    linea {
+      id
+      nombre
+    }
+    tipo {
+      id
+      nombre
+    }
+    alcance {
+      id
+      nombre
+      valor
+    }
+    estado
+    integrantes {
+      id
+      proyecto {
+        id
+        codigo
+      }
+      usuario {
+        id
+        firstname
+        lastname
+        fullname
+        email
+        username
+        employeeNumber
+        roles {
+          id
+          name
+        }
+      }
+      jefeProyecto
+      pagos {
+        id
+        integrante {
+          id
+          usuario {
+            id
+            fullname
+            employeeNumber
+          }
+        }
+        mes {
+          id
+          nombre
+        }
+        anno {
+          id
+          numero
+        }
+        horas
+        presencia
+        incidencia
+        relevancia
+        complejidad
+        gestion
+        vinculacion
+        calidad
+        significacion
+        cumplimiento
+        calculo
+      }
+    }
+  }
+}
+
+query proyectos (
+  $where: ProyectoWhereInput
+  $orderBy: ProyectoOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  proyectos (
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    codigo
+    nombre
+    inicia
+    finaliza
+    alcance {
+      id
+      nombre
+      valor
+    }
+    area {
+      id
+      nombre
+    }
+    eje {
+      id
+      nombre
+    }
+    linea {
+      id
+      nombre
+    }
+    tipo {
+      id
+      nombre
+    }
+    estado
+    integrantes {
+      id
+      proyecto {
+        id
+        codigo
+      }
+      usuario {
+        id
+        firstname
+        lastname
+        fullname
+        email
+        username
+        employeeNumber
+        roles {
+          id
+          name
+        }
+      }
+      jefeProyecto
+      pagos {
+        id
+        integrante {
+          id
+          usuario {
+            id
+            fullname
+            employeeNumber
+          }
+        }
+        mes {
+          id
+          nombre
+        }
+        anno {
+          id
+          numero
+        }
+        horas
+        presencia
+        incidencia
+        relevancia
+        complejidad
+        gestion
+        vinculacion
+        calidad
+        significacion
+        cumplimiento
+        calculo
+      }
+    }
+  }
+}
+
+query me {
+  me {
+    id
+    firstname
+    lastname
+    fullname
+    email
+    username
+    employeeNumber
+    roles {
+      id
+      name
+    }
+  }
+}
+
+query users(
+  $where: UserWhereInput
+  $orderBy: UserOrderByInput
+  $skip: Int
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+) {
+  users(
+    where: $where
+    orderBy: $orderBy
+    skip: $skip
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+  ) {
+    id
+    firstname
+    lastname
+    fullname
+    email
+    username
+    employeeNumber
+    roles {
+      id
+      name
+    }
+  }
+}
+
+query file($id: String!) {
+  file(id: $id) {
+    id
+    filename
+    path
+    encoding
+    mimetype
+    size
+  }
+}
+
+query files {
+  files {
+    id
+    filename
+    mimetype
+    path
+    size
+  }
+}

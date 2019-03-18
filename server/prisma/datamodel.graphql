@@ -1,0 +1,127 @@
+type User {
+  id: ID! @unique
+  username: String! @unique
+  email: String! @unique
+  firstname: String!
+  lastname: String!
+  fullname: String!
+  employeeNumber: String! @unique  
+  roles: [Role!]! @relation(name: "Authorization")
+  integrantes: [Integrante!]!
+}
+
+type Role {
+  id: ID! @unique
+  name: String! @unique
+  description: String
+  users: [User!]! @relation(name: "Authorization")
+}
+
+type File {
+  id: ID! @unique
+  path: String!
+  filename: String!
+  mimetype: String!
+  encoding: String!
+  size: Int!
+}
+
+type Proyecto {
+  id: ID! @unique
+  codigo: String! @unique
+  nombre: String! @unique
+  inicia: DateTime!
+  finaliza: DateTime!
+  area: Area!
+  tipo: Tipo!
+  linea: Linea!
+  eje: Eje!
+  alcance: Alcance!
+  estado: ESTADO!
+  integrantes: [Integrante!]!
+}
+
+type Integrante {
+  id: ID! @unique
+  usuario: User!
+  proyecto: Proyecto!
+  jefeProyecto: Boolean! @default(value: "false")
+  pagos: [Pago!]!  
+}
+
+type Pago {
+  id: ID! @unique
+  integrante: Integrante!
+  mes: Mes!
+  anno: Anno!
+  horas: Float! @default(value: 1.0)
+  presencia: Int! @default(value: 1)
+  incidencia: Int! @default(value: 1)
+  relevancia: Int! @default(value: 1)
+  complejidad: Int! @default(value: 1)
+  gestion: Int! @default(value: 1)
+  vinculacion: Int! @default(value: 1)
+  calidad: Int! @default(value: 1)
+  significacion: Int! @default(value: 1)
+  cumplimiento: Int! @default(value: 1)
+  calculo: Float! @default(value: 0.0)
+}
+
+enum ESTADO {
+  CREADO,
+  HABILITADO,
+  CERRADO
+}
+
+type Mes {
+  id: ID! @unique
+  nombre: MES_ENUM! @unique
+  habilitado: Boolean! @default(value: "false")
+}
+
+enum MES_ENUM {
+  ENERO,
+  FEBRERO,
+  MARZO,
+  ABRIL,
+  MAYO,
+  JUNIO,
+  JULIO,
+  AGOSTO,
+  SEPTIEMBRE,
+  OCTUBRE,
+  NOVIEMBRE,
+  DICIEMBRE
+}
+
+type Anno {
+  id: ID! @unique
+  numero: Int! @unique
+  habilitado: Boolean! @default(value: "false")
+}
+
+type Area {
+  id: ID! @unique
+  nombre: String! @unique
+}
+
+type Eje {
+  id: ID! @unique
+  nombre: String! @unique
+}
+
+type Linea {
+  id: ID! @unique
+  nombre: String! @unique
+}
+
+type Tipo {
+  id: ID! @unique
+  nombre: String! @unique
+}
+
+type Alcance {
+  id: ID! @unique
+  nombre: String! @unique
+  valor: Int!
+}

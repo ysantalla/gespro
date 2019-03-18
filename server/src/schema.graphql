@@ -1,0 +1,378 @@
+# import Node, DateTime, BatchPayload from "./generated/prisma.graphql/prisma.graphql"
+
+# import User, UserCreateInput, UserUpdateInput, UserWhereUniqueInput, UserWhereInput, UserOrderByInput, UserConnection, UserSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, RoleConnection, RoleSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import File, FileCreateInput, FileUpdateInput, FileWhereUniqueInput, FileConnection, FileSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+
+# import Mes, MesCreateInput, MesUpdateInput, MesWhereUniqueInput, MesConnection, MesSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Anno, AnnoCreateInput, AnnoUpdateInput, AnnoWhereUniqueInput, AnnoConnection, AnnoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Area, AreaCreateInput, AreaUpdateInput, AreaWhereUniqueInput, AreaConnection, AreaSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Tipo, TipoCreateInput, TipoUpdateInput, TipoWhereUniqueInput, TipoConnection, TipoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Alcance, AlcanceCreateInput, AlcanceUpdateInput, AlcanceWhereUniqueInput, AlcanceConnection, AlcanceSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+
+# import Eje, EjeCreateInput, EjeUpdateInput, EjeWhereUniqueInput, EjeConnection, EjeSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Linea, LineaCreateInput, LineaUpdateInput, LineaWhereUniqueInput, LineaConnection, LineaSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+
+
+# import Proyecto, ProyectoCreateInput, ProyectoUpdateInput, ProyectoWhereUniqueInput, ProyectoConnection, ProyectoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Integrante, IntegranteCreateInput, IntegranteUpdateInput, IntegranteWhereUniqueInput, IntegranteWhereInput, IntegranteConnection, IntegranteSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Pago, PagoCreateInput, PagoUpdateInput, PagoWhereUniqueInput, PagoWhereInput, PagoConnection, PagoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+
+scalar Upload
+scalar JSON
+scalar Date
+
+type Query {
+  me: User!
+  user(id: String!): User!
+  users(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [User!]!
+  usersConnection(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): UserConnection!
+  existUser(where: UserWhereInput): Boolean!
+
+  role(id: String!): Role!
+  roles(
+    where: RoleWhereInput
+    orderBy: RoleOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Role!]!
+  rolesConnection(
+    where: RoleWhereInput
+    orderBy: RoleOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): RoleConnection!
+  existRole(where: RoleWhereInput): Boolean!
+
+  file(id: String!): File!
+  files(
+    where: FileWhereInput
+    orderBy: FileOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [File!]!
+  filesConnection(
+    where: FileWhereInput
+    orderBy: FileOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): FileConnection!
+  existFile(where: FileWhereInput): Boolean!
+
+  proyecto(id: String!): Proyecto!
+  proyectos(
+    where: ProyectoWhereInput
+    orderBy: ProyectoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Proyecto!]!
+  proyectosConnection(
+    where: ProyectoWhereInput
+    orderBy: ProyectoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): ProyectoConnection!
+  existProyecto(where: ProyectoWhereInput): Boolean!
+
+  integrante(id: String!): Integrante!
+  integrantes(
+    where: IntegranteWhereInput
+    orderBy: IntegranteOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Integrante!]!
+  integrantesConnection(
+    where: IntegranteWhereInput
+    orderBy: IntegranteOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): IntegranteConnection!
+  existIntegrante(where: IntegranteWhereInput): Boolean!
+
+  pago(id: String!): Pago!
+  pagos(
+    where: PagoWhereInput
+    orderBy: PagoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Pago!]!
+  pagosConnection(
+    where: PagoWhereInput
+    orderBy: PagoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): PagoConnection!
+  existPago(where: PagoWhereInput): Boolean!
+
+  tipo(id: String!): Tipo!
+  tipos(
+    where: TipoWhereInput
+    orderBy: TipoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Tipo!]!
+  tiposConnection(
+    where: TipoWhereInput
+    orderBy: TipoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): TipoConnection!
+  existTipo(where: TipoWhereInput): Boolean!
+
+  eje(id: String!): Eje!
+  ejes(
+    where: EjeWhereInput
+    orderBy: EjeOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Eje!]!
+  ejesConnection(
+    where: EjeWhereInput
+    orderBy: EjeOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): EjeConnection!
+  existEje(where: EjeWhereInput): Boolean!
+
+  linea(id: String!): Linea!
+  lineas(
+    where: LineaWhereInput
+    orderBy: LineaOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Linea!]!
+  lineasConnection(
+    where: LineaWhereInput
+    orderBy: LineaOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): LineaConnection!
+  existLinea(where: LineaWhereInput): Boolean!
+
+  alcance(id: String!): Alcance!
+  alcances(
+    where: AlcanceWhereInput
+    orderBy: AlcanceOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Alcance!]!
+  alcancesConnection(
+    where: AlcanceWhereInput
+    orderBy: AlcanceOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): AlcanceConnection!
+  existAlcance(where: AlcanceWhereInput): Boolean!
+
+  area(id: String!): Area!
+  areas(
+    where: AreaWhereInput
+    orderBy: AreaOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Area!]!
+  areasConnection(
+    where: AreaWhereInput
+    orderBy: AreaOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): AreaConnection!
+  existArea(where: AreaWhereInput): Boolean!
+
+  anno(id: String!): Anno!
+  annos(
+    where: AnnoWhereInput
+    orderBy: AnnoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Anno!]!
+  annosConnection(
+    where: AnnoWhereInput
+    orderBy: AnnoOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): AnnoConnection!
+  existAnno(where: AnnoWhereInput): Boolean!
+
+  mes(id: String!): Mes!
+  meses(
+    where: MesWhereInput
+    orderBy: MesOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Mes!]!
+  mesesConnection(
+    where: MesWhereInput
+    orderBy: MesOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): MesConnection!
+  existMes(where: MesWhereInput): Boolean!
+}
+
+type Mutation {
+  
+  login(username: String!, password: String!): AuthPayload!
+  createUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  
+  createRole(data: RoleCreateInput!): Role!
+  updateRole(data: RoleUpdateInput!, where: RoleWhereUniqueInput!): Role
+  deleteRole(where: RoleWhereUniqueInput!): Role
+  deleteManyRoles(where: RoleWhereInput): BatchPayload!
+
+  createProyecto(data: ProyectoCreateInput!): Proyecto!
+  updateProyecto(data: ProyectoUpdateInput!, where: ProyectoWhereUniqueInput!): Proyecto
+  deleteProyecto(where: ProyectoWhereUniqueInput!): Proyecto
+  deleteManyProyectos(where: ProyectoWhereInput): BatchPayload!
+
+  createIntegrante(data: IntegranteCreateInput!, whereInput: IntegranteWhereInput!): Integrante!
+  updateIntegrante(data: IntegranteUpdateInput!, where: IntegranteWhereUniqueInput!, whereInput: IntegranteWhereInput!): Integrante
+  deleteIntegrante(where: IntegranteWhereUniqueInput!): Integrante
+  deleteManyIntegrantes(where: IntegranteWhereInput): BatchPayload!
+
+  createPago(data: PagoCreateInput!, whereInput: PagoWhereInput!): Pago!
+  updatePago(data: PagoUpdateInput!, where: PagoWhereUniqueInput!, whereInput: PagoWhereInput!): Pago
+  deletePago(where: PagoWhereUniqueInput!): Pago
+  deleteManyPagos(where: PagoWhereInput): BatchPayload!
+
+  createTipo(data: TipoCreateInput!): Tipo!
+  updateTipo(data: TipoUpdateInput!, where: TipoWhereUniqueInput!): Tipo
+  deleteTipo(where: TipoWhereUniqueInput!): Tipo
+  deleteManyTipos(where: TipoWhereInput): BatchPayload!
+
+  createEje(data: EjeCreateInput!): Eje!
+  updateEje(data: EjeUpdateInput!, where: EjeWhereUniqueInput!): Eje
+  deleteEje(where: EjeWhereUniqueInput!): Eje
+  deleteManyEjes(where: EjeWhereInput): BatchPayload!
+
+  createLinea(data: LineaCreateInput!): Linea!
+  updateLinea(data: LineaUpdateInput!, where: LineaWhereUniqueInput!): Linea
+  deleteLinea(where: LineaWhereUniqueInput!): Linea
+  deleteManyLineas(where: LineaWhereInput): BatchPayload!
+
+  createAlcance(data: AlcanceCreateInput!): Alcance!
+  updateAlcance(data: AlcanceUpdateInput!, where: AlcanceWhereUniqueInput!): Alcance
+  deleteAlcance(where: AlcanceWhereUniqueInput!): Alcance
+  deleteManyAlcances(where: AlcanceWhereInput): BatchPayload!
+
+  createArea(data: AreaCreateInput!): Area!
+  updateArea(data: AreaUpdateInput!, where: AreaWhereUniqueInput!): Area
+  deleteArea(where: AreaWhereUniqueInput!): Area
+  deleteManyAreas(where: AreaWhereInput): BatchPayload!
+
+  createAnno(data: AnnoCreateInput!): Anno!
+  updateAnno(data: AnnoUpdateInput!, where: AnnoWhereUniqueInput!): Anno
+  deleteAnno(where: AnnoWhereUniqueInput!): Anno
+  deleteManyAnnoes(where: AnnoWhereInput): BatchPayload!
+
+  createMes(data: MesCreateInput!): Mes!
+  updateMes(data: MesUpdateInput!, where: MesWhereUniqueInput!): Mes
+  deleteMes(where: MesWhereUniqueInput!): Mes
+  deleteManyMeses(where: MesWhereInput): BatchPayload!
+
+  uploadFile(file: Upload!): File!
+  uploadFiles(files: [Upload!]!): [File!]!
+  changeFile(file: Upload!, where: FileWhereUniqueInput!): File
+  deleteFile(where: FileWhereUniqueInput!): File
+  deleteManyFiles(where: FileWhereInput): BatchPayload!
+}
+
+type Subscription {
+  userSubscription: UserSubscriptionPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}

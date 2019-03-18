@@ -1,0 +1,103 @@
+mutation {
+  createUser(
+    data: {
+      username: "ysantalla"
+      email: "ysantalla@upr.edu.cu"
+      firstname: "Yasmany"
+      lastname: "Santalla Pereda"
+      fullname: "Yasmany Santalla Pereda"
+      employeeNumber: "08837"
+      roles: { create: [
+        { name: "ADMIN", description: "ADMIN ROL" },
+        { name: "ESPECIALISTA", description: "Especialista ROL" },
+        { name: "JPROYECTO", description: "Jefe de Proyecto ROL" },
+        { name: "PROFESOR", description: "Profesor ROL" }] }
+    }
+  ) {
+    id
+  }
+
+  create_M1: createMes(data: {
+    nombre: ENERO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M2: createMes(data: {
+    nombre: FEBRERO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M3: createMes(data: {
+    nombre: MARZO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M4: createMes(data: {
+    nombre: ABRIL
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M5: createMes(data: {
+    nombre: MAYO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M6: createMes(data: {
+    nombre: JUNIO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M7: createMes(data: {
+    nombre: JULIO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M8: createMes(data: {
+    nombre: AGOSTO
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M9: createMes(data: {
+    nombre: SEPTIEMBRE
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M10: createMes(data: {
+    nombre: OCTUBRE
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M11: createMes(data: {
+    nombre: NOVIEMBRE
+    habilitado: false    
+  }) {
+    id
+  }
+
+  create_M12: createMes(data: {
+    nombre: DICIEMBRE
+    habilitado: false    
+  }) {
+    id
+  }
+}

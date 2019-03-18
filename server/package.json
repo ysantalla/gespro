@@ -1,0 +1,49 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Nestjs w/ Apollo server, Prisma like ORM-layer",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/src/main.js",
+    "dev": "nodemon -e ts,graphql -x ts-node src/main.ts",
+    "debug": "nodemon -e ts,graphql -x ts-node --inspect src/main.ts",
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./dist",
+    "prisma": "prisma",
+    "nest": "nest"
+  },
+  "dependencies": {
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/graphql": "^5.4.0",
+    "apollo-server-core": "^2.2.6",
+    "apollo-server-express": "^2.2.6",
+    "dotenv": "^6.1.0",
+    "graphql": "^14.0.0",
+    "graphql-code-generator": "^0.13.0",
+    "graphql-import": "^0.7.1",
+    "graphql-subscriptions": "^1.0.0",
+    "graphql-tools": "^4.0.0",
+    "graphql-type-json": "^0.2.1",
+    "jsonwebtoken": "^8.3.0",
+    "mkdirp": "^0.5.1",
+    "prisma-client-lib": "^1.28.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.3.1",
+    "shortid": "^2.2.13"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^5.6.2",
+    "@nestjs/testing": "^5.4.0",
+    "@types/graphql": "^14.0.0",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^10.9.4",
+    "@types/shortid": "^0.0.29",
+    "nodemon": "^1.18.7",
+    "prisma": "^1.28.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}

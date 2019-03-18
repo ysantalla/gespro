@@ -1,0 +1,95 @@
+mutation createArea($data: AreaCreateInput!) {
+  createArea(data: $data) {
+    id
+    nombre
+  }
+}
+
+mutation deleteArea($where: AreaWhereUniqueInput!) {
+  deleteArea(where: $where) {
+    nombre
+  }
+}
+
+mutation deleteManyAreas($where: AreaWhereInput!) {
+  deleteManyAreas(where: $where) {
+    count
+  }
+}
+
+mutation updateArea($data: AreaUpdateInput!, $where: AreaWhereUniqueInput!) {
+  updateArea(data: $data, where: $where) {
+    id
+    nombre
+  }
+}
+
+mutation createTipo($data: TipoCreateInput!) {
+  createTipo(data: $data) {
+    id
+    nombre
+  }
+}
+
+mutation deleteTipo($where: TipoWhereUniqueInput!) {
+  deleteTipo(where: $where) {
+    nombre
+  }
+}
+
+mutation updateTipo($data: TipoUpdateInput!, $where: TipoWhereUniqueInput!) {
+  updateTipo(data: $data, where: $where) {
+    id
+    nombre
+  }
+}
+
+
+mutation deleteProyecto($where: ProyectoWhereUniqueInput!) {
+  deleteProyecto(where: $where) {
+    id
+  }
+}
+
+mutation deleteManyProyectos($where: ProyectoWhereInput!) {
+  deleteManyProyectos(where: $where) {
+    count
+  }
+}
+
+mutation login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    user {
+      firstname
+      username
+      roles {
+        name
+      }
+    }
+    token
+  }
+}
+
+mutation changeFile($file: Upload!, $where: FileWhereUniqueInput!) {
+  changeFile(file: $file, where: $where) {
+    filename
+  }
+}
+
+mutation deleteFile($where: FileWhereUniqueInput!) {
+  deleteFile(where: $where) {
+    filename
+  }
+}
+
+mutation deleteManyFiles($where: FileWhereInput!) {
+  deleteManyFiles(where: $where) {
+    count
+  }
+}
+
+mutation uploadFiles($files: [Upload!]!) {
+  uploadFiles(files: $files) {
+    filename
+  }
+}

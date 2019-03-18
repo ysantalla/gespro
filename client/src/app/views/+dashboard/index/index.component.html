@@ -1,0 +1,134 @@
+<div class="grid-container">
+  <h1 *ngIf="(isAdmin | async)" class="mat-h1">Administrador</h1>
+
+  <div class="container mat-elevation-z8" *ngIf="(isAdmin | async)" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/admin/user">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Usuarios</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-entity icon="person" entity="users" ></app-count-entity>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card"  routerLink="/admin/role">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Roles</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-entity icon="supervisor_account" entity="roles" ></app-count-entity>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card"  routerLink="/admin/file">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Archivos</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-entity icon="folder" entity="files" ></app-count-entity>
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+
+  <br/>
+  <h1 *ngIf="(isSpecialist | async)" class="mat-h1">Especialista</h1>
+
+  <div class="container mat-elevation-z8" *ngIf="(isSpecialist | async)" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/admin/project">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Proyectos</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-entity icon="lightbulb_outline" entity="proyectos" ></app-count-entity>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+      <mat-card class="dashboard-card" routerLink="/admin/report">
+        <mat-card-header>
+          <mat-card-title>
+            <h2 class="mat-h2">Reporte de Pago</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+            <div fxLayout="row" class="card">
+              <div fxFlex="80" fxLayout="row"  fxLayoutAlign="center center">
+                <mat-icon>description</mat-icon>
+              </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+
+  </div>
+
+  <br/>
+  <h1 *ngIf="(isJproyecto | async)" class="mat-h1">Jefe de Proyecto</h1>
+
+  <div class="container mat-elevation-z8" *ngIf="(isJproyecto | async)" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/jproject/project">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Gestión de Proyectos</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-mproject icon="lightbulb_outline" entity="proyectos" ></app-count-mproject>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/jproject/report">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Reporte de Pago</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+              <div fxLayout="row" class="card">
+                <div fxFlex="80" fxLayout="row"  fxLayoutAlign="center center">
+                  <mat-icon>description</mat-icon>
+                </div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+  </div>
+
+  <br/>
+  <h1 *ngIf="(isProfesor | async)" class="mat-h1">Profesor</h1>
+
+  <div class="container mat-elevation-z8" *ngIf="(isProfesor | async)" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+    <div class="item" fxFlex="33%" fxFlex.xs="90%" fxFlex.md="90%">
+        <mat-card class="dashboard-card" routerLink="/profesor/project">
+          <mat-card-header>
+            <mat-card-title>
+              <h2 class="mat-h2">Mis Proyectos</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <app-count-project icon="lightbulb_outline" entity="proyectos" ></app-count-project>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+  </div>
+
+
+</div>
