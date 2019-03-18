@@ -62,7 +62,7 @@
 
 ### Server
 
-* pm2 start --name server dist/src/main.js --node-args "-r ./dist/tsconfig-paths.js" -i max
+* pm2 start --name=server dist/src/main.js -i max
 
 ### Client
 
