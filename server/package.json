@@ -4,7 +4,7 @@
   "description": "Nestjs w/ Apollo server, Prisma like ORM-layer",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/src/main.js",
+    "start": "node dist/main.js",
     "dev": "nodemon -e ts,graphql -x ts-node src/main.ts",
     "debug": "nodemon -e ts,graphql -x ts-node --inspect src/main.ts",
     "build": "npm run clean && tsc",
