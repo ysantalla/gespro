@@ -201,8 +201,8 @@ export class DirectoryComponent implements OnInit {
         return users;
       }),
       catchError((err: any) => {
-        this.snackBar.open(err, 'X', {duration: 3000});
-        return of({data: null});
+        this.snackBar.open('Opss, ha ocurrido un error', 'X', {duration: 3000});
+        return of([]);
       })
     );
   }

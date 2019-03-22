@@ -13,7 +13,7 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 import { FileService } from '../../common/services/file.service';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { File, FileCreateInput, FileConnection, FileWhereUniqueInput, FileWhereInput, BatchPayload } from '../../../generated/prisma.ts/index';
+import { File, FileCreateInput, FileConnection, FileWhereUniqueInput, FileWhereInput, BatchPayload } from '../../generated/prisma.ts/index';
 
 @Resolver('File')
 export class FileResolver {

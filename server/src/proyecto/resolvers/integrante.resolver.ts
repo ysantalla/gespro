@@ -13,7 +13,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Integrante, IntegranteCreateInput, IntegranteWhereInput, IntegranteConnection, IntegranteWhereUniqueInput, BatchPayload, Pago, User, Proyecto, ProyectoWhereInput, PagoWhereInput, UserConnection } from '../../../generated/prisma.ts';
+import { Integrante, IntegranteCreateInput, IntegranteWhereInput, IntegranteConnection, IntegranteWhereUniqueInput, BatchPayload, Pago, User, Proyecto, ProyectoWhereInput, PagoWhereInput, UserConnection } from '../../generated/prisma.ts';
 
 
 @Resolver('Integrante')
@@ -188,7 +188,8 @@ export class IntegranteResolver {
       return await this.db.prisma.createIntegrante(
         {
           usuario: {connect: {username: whereInput.usuario.username}},
-          ...data
+          proyecto: data.proyecto,
+          jefeProyecto: data.jefeProyecto
         });
     }
 
@@ -242,7 +243,8 @@ export class IntegranteResolver {
         where: { ...where },
         data: {
           usuario: {connect: {username: whereInput.usuario.username}},
-          ...data
+          proyecto: data.proyecto,
+          jefeProyecto: data.jefeProyecto
         }});
     } else if (!data.jefeProyecto && user) { 
       

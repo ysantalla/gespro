@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Linea, LineaCreateInput, LineaConnection, LineaUpdateInput, LineaWhereUniqueInput, BatchPayload, LineaWhereInput } from '../../../generated/prisma.ts/index';
+import { Linea, LineaCreateInput, LineaConnection, LineaUpdateInput, LineaWhereUniqueInput, BatchPayload, LineaWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Linea')
 export class LineaResolver {

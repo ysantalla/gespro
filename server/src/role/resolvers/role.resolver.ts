@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, BatchPayload, RoleWhereInput, RoleConnection } from '../../../generated/prisma.ts/index';
+import { Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, BatchPayload, RoleWhereInput, RoleConnection } from '../../generated/prisma.ts/index';
 
 @Resolver('Role')
 export class RoleResolver {

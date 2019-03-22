@@ -28,6 +28,11 @@ export class ApiInterceptor implements HttpInterceptor {
     if (req.url === "http://directorio.upr.edu.cu/search") {
       return next.handle(req);
     }
+
+    if (req.body.some((item: any) => (item.operationName !== 'uploadFiles') && (item.operationName !== 'changeFile'))) {
+      return next.handle(req);
+    }
+
     const files = this.__extractFiles(req.body);
 
     if (files.length) {

@@ -19,18 +19,18 @@ import { PagoListComponent } from './pago/list/pago-list.component';
 import { PagoCreateComponent } from './pago/create/pago-create.component';
 import { PagoDetailsComponent } from './pago/details/pago-details.component';
 import { PagoUpdateComponent } from './pago/update/pago-update.component';
-//import { PagoReportComponent } from './report/pago/pago-report.component';
+import { PagoReportComponent } from './report/pago/pago-report.component';
 import { DirectoryComponent } from './integrante/directory/directory.component';
 import { DirectoryService } from './integrante/services/directory.service';
 
 
 const routes: Routes = [
-  // {
-  //  path: 'report',
-  //  component: PagoReportComponent,
-  //  data: {title: 'Reporte de pago', expectedRole: ['JPROYECTO' ]},
-  //  canActivate: [RoleGuard],
-  // },
+  {
+   path: 'report',
+   component: PagoReportComponent,
+   data: {title: 'Reporte de pago', expectedRole: ['JPROYECTO' ]},
+   canActivate: [RoleGuard],
+  },
   {
     path: 'project/:projectId/integrantes',
     component: IntegranteListComponent,
@@ -112,7 +112,8 @@ const routes: Routes = [
   declarations: [
     ProjectListComponent, ProjectDetailsComponent,
     IntegranteListComponent, IntegranteCreateComponent, IntegranteDetailsComponent, IntegranteUpdateComponent,
-    PagoListComponent, PagoCreateComponent, PagoDetailsComponent, PagoUpdateComponent, DirectoryComponent
+    PagoListComponent, PagoCreateComponent, PagoDetailsComponent, PagoUpdateComponent, DirectoryComponent,
+    PagoReportComponent
   ],
   providers: [DirectoryService]
 })

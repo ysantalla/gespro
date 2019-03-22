@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Eje, EjeCreateInput, EjeConnection, EjeUpdateInput, EjeWhereUniqueInput, BatchPayload, EjeWhereInput } from '../../../generated/prisma.ts/index';
+import { Eje, EjeCreateInput, EjeConnection, EjeUpdateInput, EjeWhereUniqueInput, BatchPayload, EjeWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Eje')
 export class EjeResolver {

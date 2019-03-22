@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Anno, AnnoCreateInput, AnnoConnection, AnnoUpdateInput, AnnoWhereUniqueInput, BatchPayload, AnnoWhereInput } from '../../../generated/prisma.ts/index';
+import { Anno, AnnoCreateInput, AnnoConnection, AnnoUpdateInput, AnnoWhereUniqueInput, BatchPayload, AnnoWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Anno')
 export class AnnoResolver {

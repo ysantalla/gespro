@@ -26,7 +26,7 @@ import {
   Alcance,
   Eje,
   Linea
-} from '../../../generated/prisma.ts/index';
+} from '../../generated/prisma.ts/index';
 
 @Resolver('Proyecto')
 export class ProyectoResolver {

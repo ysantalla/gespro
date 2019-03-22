@@ -28,95 +28,98 @@ import { User } from '@app/core/model/user.model';
 
         </mat-toolbar>
 
-        <mat-nav-list *ngIf="(isLoggedIn | async)">
-          <a class="menu" mat-list-item routerLink="/dashboard" routerLinkActive="active">
-            <mat-icon aria-label="dashboard">dashboard</mat-icon>
-            <span>Escritorio</span>
-          </a>
-        </mat-nav-list>
+        <nav class="nav-menu">
 
-        <mat-divider></mat-divider>
+          <mat-nav-list *ngIf="(isLoggedIn | async)">
+            <a class="menu" mat-list-item routerLink="/dashboard" routerLinkActive="active">
+              <mat-icon aria-label="dashboard">dashboard</mat-icon>
+              <span>Escritorio</span>
+            </a>
+          </mat-nav-list>
 
-        <mat-nav-list *ngIf="(isAdmin | async)">
-          <a class="menu" mat-list-item routerLink="/admin/user" routerLinkActive="active">
-            <mat-icon aria-label="users">person</mat-icon>
-            <span>Gestión de Usuarios</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/role" routerLinkActive="active">
-            <mat-icon aria-label="roles">supervisor_account</mat-icon>
-            <span>Gestión de Roles</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/file" routerLinkActive="active">
-            <mat-icon aria-label="files">folder</mat-icon>
-            <span>Gestión de Archivos</span>
-          </a>
-        </mat-nav-list>
+          <mat-divider></mat-divider>
 
-        <mat-divider></mat-divider>
+          <mat-nav-list *ngIf="(isAdmin | async)">
+            <a class="menu" mat-list-item routerLink="/admin/user" routerLinkActive="active">
+              <mat-icon aria-label="users">person</mat-icon>
+              <span>Gestión de Usuarios</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/role" routerLinkActive="active">
+              <mat-icon aria-label="roles">supervisor_account</mat-icon>
+              <span>Gestión de Roles</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/file" routerLinkActive="active">
+              <mat-icon aria-label="files">folder</mat-icon>
+              <span>Gestión de Archivos</span>
+            </a>
+          </mat-nav-list>
 
-        <mat-nav-list *ngIf="(isSpecialist | async)">
-          <a class="menu" mat-list-item routerLink="/admin/project" routerLinkActive="active">
-            <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
-            <span>Gestión de Proyectos</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/report" routerLinkActive="active">
-            <mat-icon aria-label="report">description</mat-icon>
-            <span>Reporte de Pago</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/area" routerLinkActive="active">
-            <mat-icon aria-label="areas">add_location</mat-icon>
-            <span>Gestión de Areas</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/linea" routerLinkActive="active">
-            <mat-icon aria-label="lineas">group_work</mat-icon>
-            <span>Gestión de Líneas de Investigación</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/eje" routerLinkActive="active">
-            <mat-icon aria-label="ejes">build</mat-icon>
-            <span>Gestión de Ejes Estratégicos</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/alcance" routerLinkActive="active">
-            <mat-icon aria-label="areas">all_out</mat-icon>
-            <span>Gestión de Alcances</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/type" routerLinkActive="active">
-            <mat-icon aria-label="types">gesture</mat-icon>
-            <span>Gestión de Tipos</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/month" routerLinkActive="active">
-            <mat-icon aria-label="months">today</mat-icon>
-            <span>Gestión de Meses</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/admin/year" routerLinkActive="active">
-            <mat-icon aria-label="years">today</mat-icon>
-            <span>Gestión de Años</span>
-          </a>
-        </mat-nav-list>
+          <mat-divider></mat-divider>
 
-        <mat-divider></mat-divider>
+          <mat-nav-list *ngIf="(isSpecialist | async)">
+            <a class="menu" mat-list-item routerLink="/admin/project" routerLinkActive="active">
+              <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
+              <span>Gestión de Proyectos</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/report" routerLinkActive="active">
+              <mat-icon aria-label="report">description</mat-icon>
+              <span>Reporte de Pago</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/area" routerLinkActive="active">
+              <mat-icon aria-label="areas">add_location</mat-icon>
+              <span>Gestión de Areas</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/linea" routerLinkActive="active">
+              <mat-icon aria-label="lineas">group_work</mat-icon>
+              <span>Gestión de Líneas de Investigación</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/eje" routerLinkActive="active">
+              <mat-icon aria-label="ejes">build</mat-icon>
+              <span>Gestión de Ejes Estratégicos</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/alcance" routerLinkActive="active">
+              <mat-icon aria-label="areas">all_out</mat-icon>
+              <span>Gestión de Alcances</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/type" routerLinkActive="active">
+              <mat-icon aria-label="types">gesture</mat-icon>
+              <span>Gestión de Tipos</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/month" routerLinkActive="active">
+              <mat-icon aria-label="months">today</mat-icon>
+              <span>Gestión de Meses</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/year" routerLinkActive="active">
+              <mat-icon aria-label="years">today</mat-icon>
+              <span>Gestión de Años</span>
+            </a>
+          </mat-nav-list>
 
-        <mat-nav-list *ngIf="(isJProyecto | async)">
-          <a class="menu" mat-list-item routerLink="/jproject/project" routerLinkActive="active">
-            <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
-            <span>Gestión de Proyectos</span>
-          </a>
-          <a class="menu" mat-list-item routerLink="/jproject/report" routerLinkActive="active">
-            <mat-icon aria-label="report">description</mat-icon>
-            <span>Reporte de Pago</span>
-          </a>
+          <mat-divider></mat-divider>
+
+          <mat-nav-list *ngIf="(isJProyecto | async)">
+            <a class="menu" mat-list-item routerLink="/jproject/project" routerLinkActive="active">
+              <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
+              <span>Gestión de Proyectos</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/jproject/report" routerLinkActive="active">
+              <mat-icon aria-label="report">description</mat-icon>
+              <span>Reporte de Pago</span>
+            </a>
 
 
-        </mat-nav-list>
+          </mat-nav-list>
 
-        <mat-divider></mat-divider>
+          <mat-divider></mat-divider>
 
-        <mat-nav-list *ngIf="(isProfesor | async)">
-          <a class="menu" mat-list-item routerLink="/profesor/project" routerLinkActive="active">
-            <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
-            <span>Mis Proyectos</span>
-          </a>
+          <mat-nav-list *ngIf="(isProfesor | async)">
+            <a class="menu" mat-list-item routerLink="/profesor/project" routerLinkActive="active">
+              <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
+              <span>Mis Proyectos</span>
+            </a>
 
-        </mat-nav-list>
+          </mat-nav-list>
+        </nav>
 
       </mat-sidenav>
       <mat-sidenav-content>
@@ -186,6 +189,14 @@ import { User } from '@app/core/model/user.model';
     .router {
       min-height: 87vh;
       height: auto;
+    }
+
+    .nav-menu {
+      min-height: auto;
+      height: 90vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: block;
     }
 
     .sidenav-container {

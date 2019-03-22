@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Mes, MesCreateInput, MesConnection, MesUpdateInput, MesWhereUniqueInput, BatchPayload, MesWhereInput } from '../../../generated/prisma.ts/index';
+import { Mes, MesCreateInput, MesConnection, MesUpdateInput, MesWhereUniqueInput, BatchPayload, MesWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Mes')
 export class MesResolver {

@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Tipo, TipoCreateInput, TipoConnection, TipoUpdateInput, TipoWhereUniqueInput, BatchPayload, TipoWhereInput } from '../../../generated/prisma.ts/index';
+import { Tipo, TipoCreateInput, TipoConnection, TipoUpdateInput, TipoWhereUniqueInput, BatchPayload, TipoWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Tipo')
 export class TipoResolver {

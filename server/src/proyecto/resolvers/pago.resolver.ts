@@ -13,7 +13,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Pago, PagoCreateInput, PagoWhereUniqueInput, PagoWhereInput, PagoUpdateInput, PagoConnection, BatchPayload, IntegranteWhereInput, Integrante, Mes, Anno } from '../../../generated/prisma.ts/index';
+import { Pago, PagoCreateInput, PagoWhereUniqueInput, PagoWhereInput, PagoUpdateInput, PagoConnection, BatchPayload, IntegranteWhereInput, Integrante, Mes, Anno } from '../../generated/prisma.ts/index';
 
 const TOTAL_HOURS = process.env.TOTAL_HOURS;
 

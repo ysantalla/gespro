@@ -1,4 +1,4 @@
-import { Args, Query, Resolver, Context, Mutation, ResolveProperty, Parent } from '@nestjs/graphql';
+import { Args, Query, Resolver, Context, Mutation } from '@nestjs/graphql';
 import { UseGuards } from '@nestjs/common';
 import { ApolloError } from 'apollo-server-core';
 
@@ -9,7 +9,7 @@ import { AuthGuard } from '../../common/guards/auth.guard';
 import { AdService } from '../services/ad.service';
 import { AuthService } from '../../common/services/auth.service';
 import { PrismaService } from '../../common/services/prisma.service';
-import { User } from '../../../generated/prisma.ts/index';
+import { User } from '../../generated/prisma.ts/index';
 
 
 @Resolver('Auth')

@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Area, AreaCreateInput, AreaConnection, AreaUpdateInput, AreaWhereUniqueInput, AreaWhereInput } from '../../../generated/prisma.ts/index';
+import { Area, AreaCreateInput, AreaConnection, AreaUpdateInput, AreaWhereUniqueInput, AreaWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Area')
 export class AreaResolver {

@@ -4,8 +4,8 @@ import { Users, ExistUserGQL } from '@app/graphql/types';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 
@@ -154,12 +154,6 @@ export class DirectoryComponent implements OnInit {
         } else {
           this.validUser = true;
 
-         /* this.existUser = this.existUserGQL.watch(
-            {
-              where: {
-                email: data.email
-              }
-            });*/
         }
         this.loading = false;
       });
@@ -204,6 +198,11 @@ export class DirectoryComponent implements OnInit {
         }
 
         return users;
+      }),
+      catchError((err: any) => {
+        console.log(err);
+        this.snackBar.open('Opss, ha ocurrido un error', 'X', {duration: 3000});
+        return of([]);
       })
     );
   }

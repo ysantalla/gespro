@@ -6,12 +6,12 @@ import * as path from 'path';
 import * as GraphQLJSON from 'graphql-type-json';
 import { AppController } from './app.controller';
 
-import { UserModule } from './modules/user/user.module';
-import { CommonModule } from './modules/common/common.module';
+import { UserModule } from './user/user.module';
+import { CommonModule } from './common/common.module';
 
-import { RoleModule } from './modules/role/role.module';
-import { FileModule } from './modules/file/file.module';
-import { ProyectoModule } from './modules/proyecto/proyecto.module';
+import { RoleModule } from './role/role.module';
+import { FileModule } from './file/file.module';
+import { ProyectoModule } from './proyecto/proyecto.module';
 
 const typeDefs = importSchema(path.resolve('./src/schema.graphql'));
 

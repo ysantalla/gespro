@@ -11,7 +11,7 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
 import { PrismaService } from '../../common/services/prisma.service';
-import { Alcance, AlcanceCreateInput, AlcanceConnection, AlcanceUpdateInput, AlcanceWhereUniqueInput, BatchPayload, AlcanceWhereInput } from '../../../generated/prisma.ts/index';
+import { Alcance, AlcanceCreateInput, AlcanceConnection, AlcanceUpdateInput, AlcanceWhereUniqueInput, BatchPayload, AlcanceWhereInput } from '../../generated/prisma.ts/index';
 
 @Resolver('Alcance')
 export class AlcanceResolver {

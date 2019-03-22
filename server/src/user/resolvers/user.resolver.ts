@@ -12,7 +12,7 @@ import { PrismaService } from '../../common/services/prisma.service';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { RolesGuard } from '../../common/guards/roles.guard';
 
-import { UserCreateInput, User, UserWhereUniqueInput, UserUpdateInput, UserWhereInput, BatchPayload, Role, UserConnection, Proyecto, Integrante } from '../../../generated/prisma.ts/index';
+import { UserCreateInput, User, UserWhereUniqueInput, UserUpdateInput, UserWhereInput, BatchPayload, Role, UserConnection, Proyecto, Integrante } from '../../generated/prisma.ts/index';
 import { ApolloError } from 'apollo-server-core';
 
 

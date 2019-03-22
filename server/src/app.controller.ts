@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { Get, Controller, Param, Res } from '@nestjs/common';
-import { PrismaService } from './modules/common/services/prisma.service';
+import { PrismaService } from './common/services/prisma.service';
 
 @Controller()
 export class AppController {
