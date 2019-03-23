@@ -15,6 +15,8 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 import { PrismaService } from '../../common/services/prisma.service';
 import { Pago, PagoCreateInput, PagoWhereUniqueInput, PagoWhereInput, PagoUpdateInput, PagoConnection, BatchPayload, IntegranteWhereInput, Integrante, Mes, Anno } from '../../generated/prisma.ts/index';
 
+
+require('dotenv').config();
 const TOTAL_HOURS = process.env.TOTAL_HOURS;
 
 @Resolver('Pago')
@@ -29,7 +31,6 @@ export class PagoResolver {
   async pagos(
     @Args() args: any,
   ): Promise<Pago[]> {
-    console.log(args, "yasmany");
     return await this.db.prisma.pagoes(args);
   }
 
@@ -171,15 +172,20 @@ export class PagoResolver {
       throw new ApolloError(`Ya existe un pago para este usuario, en este mes y año`);
     }
 
-    const pagos: Pago[] = await this.db.prisma.pagoes({where: {integrante: {usuario: whereInput.integrante.usuario}, anno: whereInput.anno, mes: whereInput.mes}});
+    if (data.horas > parseFloat(TOTAL_HOURS)) {
+      throw new ApolloError(`El total de horas excede en ${data.horas - parseFloat(TOTAL_HOURS)} de horas permitidas`);
+    }
+
+    const usuario = await this.db.prisma.integrante({id: whereInput.integrante.id}).usuario();
+    const pagos: Pago[] = await this.db.prisma.pagoes({where: {integrante: {usuario: {id: usuario.id}}, anno: whereInput.anno, mes: whereInput.mes}});
 
     if (pagos.length > 0) {
       const totalHours: number = pagos.map((data => data.horas)).reduce((a, b) => {
         return a + b;
       });
-  
-      if (parseFloat(TOTAL_HOURS) < totalHours) {
-        throw new ApolloError(`El total de horas excede en ${totalHours - parseFloat(TOTAL_HOURS)} de horas permitidas`);
+
+      if (parseFloat(TOTAL_HOURS) < totalHours + data.horas) {
+        throw new ApolloError(`El total de horas excede en ${totalHours + data.horas - parseFloat(TOTAL_HOURS)} de horas permitidas`);
       }
     }
 
@@ -245,15 +251,20 @@ export class PagoResolver {
       throw new ApolloError(`Ya existe un pago para este usuario, en este mes y año`);
     }
 
-    const pagos: Pago[] = await this.db.prisma.pagoes({where: {integrante: {usuario: whereInput.integrante.usuario}, anno: whereInput.anno, mes: whereInput.mes, id_not: where.id}});
+    if (data.horas > parseFloat(TOTAL_HOURS)) {
+      throw new ApolloError(`El total de horas excede en ${data.horas - parseFloat(TOTAL_HOURS)} de horas permitidas`);
+    }
+
+    const usuario = await this.db.prisma.integrante({id: whereInput.integrante.id}).usuario();
+    const pagos: Pago[] = await this.db.prisma.pagoes({where: {integrante: {usuario: {id: usuario.id}}, anno: whereInput.anno, mes: whereInput.mes, id_not: where.id}});
 
     if (pagos.length > 0) {
       const totalHours: number = pagos.map((data => data.horas)).reduce((a, b) => {
         return a + b;
       });
-  
-      if (parseFloat(TOTAL_HOURS) < totalHours) {
-        throw new ApolloError(`El total de horas excede en ${totalHours - parseFloat(TOTAL_HOURS)} de horas permitidas`);
+
+      if (parseFloat(TOTAL_HOURS) < totalHours + data.horas) {
+        throw new ApolloError(`El total de horas excede en ${totalHours + data.horas - parseFloat(TOTAL_HOURS)} de horas permitidas`);
       }
     }
 

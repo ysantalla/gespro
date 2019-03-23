@@ -290,13 +290,15 @@ export class PagoReportComponent implements OnInit, OnDestroy {
       header: {
           columns: [
             {text: 'Reporte de Pago', fontSize: 25, margin: [30, 30, 30, 300], alignment: 'left'},
-            {text: `${semestre}/${this.reportPagoForm.value.anno.numero}`, margin: [30, 30], alignment: 'right'}
-          ]
+            {text: `${semestre}/${this.reportPagoForm.value.anno.numero}`, margin: [30, 30], alignment: 'right'}],
       },
       footer: function(currentPage, pageCount) { return currentPage.toString() + ' de ' + pageCount; },
       content: [
         {
           text: `"${proyecto[0].nombre}"`, style: {italics: true}, margin: 10
+        },
+        {
+          text: `Código: "${proyecto[0].codigo}"`, style: {italics: true}, margin: 10
         },
         {
           layout: 'lightHorizontalLines', // optional

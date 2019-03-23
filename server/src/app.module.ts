@@ -40,7 +40,7 @@ const typeDefs = importSchema(path.resolve('./src/schema.graphql'));
           token: token.replace('Bearer ', ''),
         };
       },
-      debug: true,
+      debug: false,
       subscriptions: {
         path: process.env.GRAPHQL_SUBSCRIPTION,
       },

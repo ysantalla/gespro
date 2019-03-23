@@ -88,6 +88,13 @@ interface Report  {
       </div>
     </div>
     <br />
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="item" fxFlex="98%">
+        <div class="mat-elevation-z8 info loading-shade" *ngIf="report.length == 0;">
+          <h1 class="mat-h1">No hay registros</h1>
+        </div>
+      </div>
+    </div>
     <div class='container' fxLayout='row' fxLayoutAlign='center center'>
       <div class='item' fxFlex='98%' fxFlex.xs='100%' fxFlex.md='100%'>
         <div class='mat-elevation-z8' *ngIf="report.length > 0">
@@ -236,7 +243,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
       pageOrientation: 'portrait',
 
       // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
-      pageMargins: [ 40, 60, 40, 60 ],
+      pageMargins: [ 40, 80, 40, 60 ],
       header: {
         columns: [
           {text: 'Reporte de Pago', fontSize: 25, margin: [30, 30, 30, 300], alignment: 'left'},
@@ -262,7 +269,12 @@ export class PagoReportComponent implements OnInit, OnDestroy {
         {
           columns: [
             {
-              text: 'Firma administrativa',
+              text: 'Elaborado por',
+              alignment: 'left',
+              margin: 40
+            },
+            {
+              text: 'Aprobado por',
               alignment: 'right',
               margin: 40
             }
@@ -351,7 +363,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                   number: i++,
                   employeeNumber: user.employeeNumber,
                   fullname: user.fullname,
-                  pago: sumPay
+                  pago: parseFloat(sumPay.toFixed(1))
                 });
               }
             });

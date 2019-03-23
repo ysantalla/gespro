@@ -158,8 +158,8 @@ const deleteManyEjes = gql`
                   </button>
                 </div>
                 <div fxFlex="90%">
-                  <div [hidden]="dataSource.data.length <= 50">
-                    <mat-paginator #paginator [length]="dataSource.data.length"
+                  <div [hidden]="this.dataSource.data.length <= 50">
+                    <mat-paginator #paginator [length]="this.dataSource.data.length"
                     [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[50, 100, 200]" showFirstLastButtons>
                     </mat-paginator>
                   </div>
