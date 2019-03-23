@@ -1,22 +1,22 @@
-# import Node, DateTime, BatchPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Node, DateTime, BatchPayload from "./generated/prisma.graphql"
 
-# import User, UserCreateInput, UserUpdateInput, UserWhereUniqueInput, UserWhereInput, UserOrderByInput, UserConnection, UserSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, RoleConnection, RoleSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import File, FileCreateInput, FileUpdateInput, FileWhereUniqueInput, FileConnection, FileSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import User, UserCreateInput, UserUpdateInput, UserWhereUniqueInput, UserWhereInput, UserOrderByInput, UserConnection, UserSubscriptionPayload from "./generated/prisma.graphql"
+# import Role, RoleCreateInput, RoleUpdateInput, RoleWhereUniqueInput, RoleConnection, RoleSubscriptionPayload from "./generated/prisma.graphql"
+# import File, FileCreateInput, FileUpdateInput, FileWhereUniqueInput, FileConnection, FileSubscriptionPayload from "./generated/prisma.graphql"
 
-# import Mes, MesCreateInput, MesUpdateInput, MesWhereUniqueInput, MesConnection, MesSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Anno, AnnoCreateInput, AnnoUpdateInput, AnnoWhereUniqueInput, AnnoConnection, AnnoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Area, AreaCreateInput, AreaUpdateInput, AreaWhereUniqueInput, AreaConnection, AreaSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Tipo, TipoCreateInput, TipoUpdateInput, TipoWhereUniqueInput, TipoConnection, TipoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Alcance, AlcanceCreateInput, AlcanceUpdateInput, AlcanceWhereUniqueInput, AlcanceConnection, AlcanceSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Mes, MesCreateInput, MesUpdateInput, MesWhereUniqueInput, MesConnection, MesSubscriptionPayload from "./generated/prisma.graphql"
+# import Anno, AnnoCreateInput, AnnoUpdateInput, AnnoWhereUniqueInput, AnnoConnection, AnnoSubscriptionPayload from "./generated/prisma.graphql"
+# import Area, AreaCreateInput, AreaUpdateInput, AreaWhereUniqueInput, AreaConnection, AreaSubscriptionPayload from "./generated/prisma.graphql"
+# import Tipo, TipoCreateInput, TipoUpdateInput, TipoWhereUniqueInput, TipoConnection, TipoSubscriptionPayload from "./generated/prisma.graphql"
+# import Alcance, AlcanceCreateInput, AlcanceUpdateInput, AlcanceWhereUniqueInput, AlcanceConnection, AlcanceSubscriptionPayload from "./generated/prisma.graphql"
 
-# import Eje, EjeCreateInput, EjeUpdateInput, EjeWhereUniqueInput, EjeConnection, EjeSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Linea, LineaCreateInput, LineaUpdateInput, LineaWhereUniqueInput, LineaConnection, LineaSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Eje, EjeCreateInput, EjeUpdateInput, EjeWhereUniqueInput, EjeConnection, EjeSubscriptionPayload from "./generated/prisma.graphql"
+# import Linea, LineaCreateInput, LineaUpdateInput, LineaWhereUniqueInput, LineaConnection, LineaSubscriptionPayload from "./generated/prisma.graphql"
 
 
-# import Proyecto, ProyectoCreateInput, ProyectoUpdateInput, ProyectoWhereUniqueInput, ProyectoConnection, ProyectoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Integrante, IntegranteCreateInput, IntegranteUpdateInput, IntegranteWhereUniqueInput, IntegranteWhereInput, IntegranteConnection, IntegranteSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
-# import Pago, PagoCreateInput, PagoUpdateInput, PagoWhereUniqueInput, PagoWhereInput, PagoConnection, PagoSubscriptionPayload from "./generated/prisma.graphql/prisma.graphql"
+# import Proyecto, ProyectoCreateInput, ProyectoUpdateInput, ProyectoWhereUniqueInput, ProyectoConnection, ProyectoSubscriptionPayload from "./generated/prisma.graphql"
+# import Integrante, IntegranteCreateInput, IntegranteUpdateInput, IntegranteWhereUniqueInput, IntegranteWhereInput, IntegranteConnection, IntegranteSubscriptionPayload from "./generated/prisma.graphql"
+# import Pago, PagoCreateInput, PagoUpdateInput, PagoWhereUniqueInput, PagoWhereInput, PagoConnection, PagoSubscriptionPayload from "./generated/prisma.graphql"
 
 scalar Upload
 scalar JSON

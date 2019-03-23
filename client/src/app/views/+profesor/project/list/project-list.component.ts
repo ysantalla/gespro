@@ -53,6 +53,8 @@ const proyectoList = gql`
       </div>
       <br />
 
+      <br />
+
       <div fxLayout="row" fxLayoutAlign="center center">
         <div class="item" fxFlex="98%">
           <div class="mat-elevation-z8 info loading-shade" *ngIf="this.dataSource.data.length == 0;">
@@ -60,8 +62,6 @@ const proyectoList = gql`
           </div>
         </div>
       </div>
-
-      <br />
 
       <div [hidden]="!(this.dataSource.data.length > 0)">
 

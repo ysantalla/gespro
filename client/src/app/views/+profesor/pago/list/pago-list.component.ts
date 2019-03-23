@@ -58,14 +58,6 @@ const pagoList = gql`
       </div>
       <br />
 
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <div class="item" fxFlex="98%">
-          <div class="mat-elevation-z8 info loading-shade" *ngIf="this.dataSource.data.length == 0;">
-            <h1 class="mat-h1">No hay registros</h1>
-          </div>
-        </div>
-      </div>
-
       <div fxLayout="row" class="buttons" fxLayoutAlign="start center">
 
         <div class="item" fxFlex="15%">
@@ -78,6 +70,14 @@ const pagoList = gql`
       </div>
 
       <br />
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div class="item" fxFlex="98%">
+          <div class="mat-elevation-z8 info loading-shade" *ngIf="this.dataSource.data.length == 0;">
+            <h1 class="mat-h1">No hay registros</h1>
+          </div>
+        </div>
+      </div>
 
       <div [hidden]="!(this.dataSource.data.length > 0)">
 

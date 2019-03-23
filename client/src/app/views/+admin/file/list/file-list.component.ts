@@ -62,14 +62,6 @@ const deleteManyFiles = gql`
 
       <div fxLayout="row" fxLayoutAlign="center center">
         <div class="item" fxFlex="98%">
-          <div class="mat-elevation-z8 info loading-shade" *ngIf="this.dataSource.data.length == 0;">
-            <h1 class="mat-h1">No hay registros</h1>
-          </div>
-        </div>
-      </div>
-
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <div class="item" fxFlex="98%">
           <button class="create-button" mat-raised-button color="primary" routerLink="/admin/file/upload" routerLinkActive="active">
             <mat-icon>add</mat-icon>
             <span>Archivo</span>
@@ -78,6 +70,14 @@ const deleteManyFiles = gql`
       </div>
 
       <br />
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div class="item" fxFlex="98%">
+          <div class="mat-elevation-z8 info loading-shade" *ngIf="this.dataSource.data.length == 0;">
+            <h1 class="mat-h1">No hay registros</h1>
+          </div>
+        </div>
+      </div>
 
       <div [hidden]="!(this.dataSource.data.length > 0)">
 
