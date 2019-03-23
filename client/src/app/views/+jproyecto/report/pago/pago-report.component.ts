@@ -100,13 +100,16 @@ interface Report  {
         <div class='mat-elevation-z8' *ngFor="let p of reporte">
 
         <mat-toolbar color="primary">
-          <h2 class='mat-h1'>Reporte de Pago</h2>
+          <h2 class='mat-h1'>Filtrado</h2>
+          <span class="spacer"></span>
+          <h2 class="mat-h2">Código del Proyecto: {{p?.codigo}}</h2>
+          <span class="spacer">
+          </span>
+          <span>
+            Resultados -> ({{p?.integrantes.length}})
+          </span>
         </mat-toolbar>
         <mat-card class='pago-card'>
-
-          <mat-card-title>
-            <h2 class="mat-h2">Código del Proyecto: {{p.codigo}}</h2>
-          </mat-card-title>
 
           <mat-card-content>
 

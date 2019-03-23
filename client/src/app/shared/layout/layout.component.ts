@@ -61,10 +61,6 @@ import { User } from '@app/core/model/user.model';
               <mat-icon aria-label="projects">lightbulb_outline</mat-icon>
               <span>Gestión de Proyectos</span>
             </a>
-            <a class="menu" mat-list-item routerLink="/admin/report" routerLinkActive="active">
-              <mat-icon aria-label="report">description</mat-icon>
-              <span>Reporte de Pago</span>
-            </a>
             <a class="menu" mat-list-item routerLink="/admin/area" routerLinkActive="active">
               <mat-icon aria-label="areas">add_location</mat-icon>
               <span>Gestión de Areas</span>
@@ -92,6 +88,15 @@ import { User } from '@app/core/model/user.model';
             <a class="menu" mat-list-item routerLink="/admin/year" routerLinkActive="active">
               <mat-icon aria-label="years">today</mat-icon>
               <span>Gestión de Años</span>
+            </a>
+
+            <a class="menu" mat-list-item routerLink="/admin/report/pago" routerLinkActive="active">
+              <mat-icon aria-label="report">description</mat-icon>
+              <span>Reporte de Pago</span>
+            </a>
+            <a class="menu" mat-list-item routerLink="/admin/report/proyecto" routerLinkActive="active">
+              <mat-icon aria-label="report">lightbulb_outline</mat-icon>
+              <span>Reporte de Proyecto</span>
             </a>
           </mat-nav-list>
 
@@ -193,7 +198,7 @@ import { User } from '@app/core/model/user.model';
 
     .nav-menu {
       min-height: auto;
-      height: 90vh;
+      height: 92vh;
       overflow-x: hidden;
       overflow-y: auto;
       display: block;

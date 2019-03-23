@@ -100,7 +100,12 @@ interface Report  {
         <div class='mat-elevation-z8' *ngIf="report.length > 0">
 
         <mat-toolbar color="primary">
-          <h2 class='mat-h1'>Reporte de Pago</h2>
+          <h2 class='mat-h1'>Filtrado</h2>
+          <span class="spacer">
+          </span>
+          <span>
+            Resultados -> ({{report?.length}})
+          </span>
         </mat-toolbar>
         <mat-card class='pago-card'>
 
@@ -171,6 +176,9 @@ interface Report  {
     `
       .full-width {
         width: 100%;
+      }
+      .spacer {
+        flex: 1 1 auto;
       }
     `
   ]

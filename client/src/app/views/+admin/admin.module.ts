@@ -69,6 +69,7 @@ import { PagoUpdateComponent } from './pago/update/pago-update.component';
 import { PagoReportComponent } from './report/pago/pago-report.component';
 import { DirectoryService } from 'src/app/views/+admin/integrante/services/directory.service';
 import { DirectoryComponent } from 'src/app/views/+admin/integrante/directory/directory.component';
+import { ProyectoReportComponent } from './report/proyecto/proyecto-report.component';
 
 
 const routes: Routes = [
@@ -79,11 +80,18 @@ const routes: Routes = [
     canActivate: [RoleGuard],
   },
   {
-   path: 'report',
+   path: 'report/pago',
    component: PagoReportComponent,
    data: {title: 'Reporte de Pago', expectedRole: ['ESPECIALISTA']},
    canActivate: [RoleGuard],
   },
+
+  {
+    path: 'report/proyecto',
+    component: ProyectoReportComponent,
+    data: {title: 'Reporte de Proyecto', expectedRole: ['ESPECIALISTA']},
+    canActivate: [RoleGuard],
+   },
   {
     path: 'project/:projectId/integrante/create',
     component: IntegranteCreateComponent,
@@ -416,7 +424,7 @@ const routes: Routes = [
     UserListComponent, UserCreateComponent, UserUpdateComponent, UserDetailsComponent,
     RoleListComponent, RoleCreateComponent, RoleUpdateComponent, RoleDetailsComponent,
     FileListComponent, FileUploadComponent, FileChangeComponent, FileDetailsComponent,
-    PagoReportComponent,
+    PagoReportComponent, ProyectoReportComponent,
     ProjectListComponent, ProjectCreateComponent, ProjectUpdateComponent, ProjectDetailsComponent,
     AreaListComponent, AreaCreateComponent, AreaDetailsComponent, AreaUpdateComponent,
     EjeListComponent, EjeCreateComponent, EjeDetailsComponent, EjeUpdateComponent,

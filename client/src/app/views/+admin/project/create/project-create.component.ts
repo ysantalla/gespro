@@ -85,7 +85,7 @@ const typesQuery = gql`
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
-                  <input matInput required type="text" placeholder="Nombre del proyecto" formControlName="nombre">
+                  <textarea matInput required placeholder="Nombre del proyecto" formControlName="nombre"></textarea>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">

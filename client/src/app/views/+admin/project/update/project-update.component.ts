@@ -5,7 +5,8 @@ import { MatSnackBar } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 import { Subscription, Observable } from 'rxjs';
-import { TiposGQL, AreasGQL, ProyectoCreateInput, AlcancesGQL, Proyecto, Tipo, Area, Alcance, Lineas, Ejes, LineasGQL, EjesGQL } from '@app/graphql/types';
+import { TiposGQL, AreasGQL, ProyectoCreateInput,
+   AlcancesGQL, Proyecto, Tipo, Area, Alcance, Lineas, Ejes, LineasGQL, EjesGQL } from '@app/graphql/types';
 import { map } from 'rxjs/operators';
 import { EjeCreateComponent } from '../../eje/create/eje-create.component';
 
@@ -79,7 +80,7 @@ const proyectoQuery = gql`
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
-                  <input matInput required type="text" placeholder="Nombre de proyecto" formControlName="nombre">
+                  <textarea matInput required placeholder="Nombre de proyecto" formControlName="nombre"></textarea>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
