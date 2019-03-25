@@ -49,15 +49,11 @@ export class AuthResolver {
         }
       `;
 
-    const user =  await this.db.prisma.$exists.user({username});
-
-    console.log(user)
+    const user =  await this.db.prisma.user({username}).$fragment(fragment);
 
     try {
       const responseAD = await this.adService.login(
         username, password, 'sAMAccountName,givenName,sn,mail,employeeNumber');
-
-      console.log(responseAD, "yasmany");
 
       if (!user) {
         const newUser = await this.db.prisma.createUser({
