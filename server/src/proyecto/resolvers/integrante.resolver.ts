@@ -181,9 +181,11 @@ export class IntegranteResolver {
       return await this.db.prisma.createIntegrante(
         {
           usuario: {connect: {username: whereInput.usuario.username}},
-          ...data
+          proyecto: data.proyecto,
+          jefeProyecto: data.jefeProyecto
         });
     } else if (!data.jefeProyecto && user) { 
+
 
       return await this.db.prisma.createIntegrante(
         {
@@ -252,7 +254,8 @@ export class IntegranteResolver {
         where: { ...where },
         data: {
           usuario: {connect: {username: whereInput.usuario.username}},
-          ...data
+          proyecto: data.proyecto,
+          jefeProyecto: data.jefeProyecto
         }});
     }
 
