@@ -49,7 +49,7 @@ const proyectoQuery = gql`
     </div>
     <br />
     <div class="container" fxLayout="row" fxLayoutAlign="center center">
-      <div class="item" fxFlex="50%" fxFlex.xs="98%" fxFlex.md="70%">
+      <div class="item" fxFlex="98%" fxFlex.xs="98%" fxFlex.md="98%">
 
         <div class="mat-elevation-z8">
           <mat-card class="proyecto-details-card">
@@ -61,7 +61,7 @@ const proyectoQuery = gql`
 
             <mat-card-content>
 
-              <mat-grid-list *ngIf="proyectoData" cols="2" rowHeight="6:1">
+              <mat-grid-list *ngIf="proyectoData" cols="2" rowHeight="9:1">
                 <mat-grid-tile><h3 class="mat-h3">Id:</h3></mat-grid-tile>
                 <mat-grid-tile><h3 class="mat-h3"> {{proyectoData.id}}</h3></mat-grid-tile>
                 <mat-grid-tile><h3 class="mat-h3">Nombre:</h3></mat-grid-tile>
