@@ -5,11 +5,15 @@ import { AdService } from './services/ad.service';
 import { AuthResolver } from './resolvers/auth.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 
+require('dotenv').config();
+
+const SERVER_URL = process.env.AD_ENDPOINT;
+
 @Module({
     imports: [CommonModule, HttpModule.register({
         timeout: 10000,
         maxRedirects: 5,
-        baseURL: 'https://sync.upr.edu.cu/api',
+        baseURL: SERVER_URL,
       })],
     providers: [AuthResolver, UserResolver, AdService],
 })
