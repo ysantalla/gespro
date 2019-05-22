@@ -365,6 +365,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                   pagoProyecto.push(this.getPago(integrante.pagos));
                 }
               });
+
               const sumPay = this.sumPagos(pagoProyecto);
               if (flag && sumPay > 0) {
                 this.report.push({
@@ -410,8 +411,8 @@ export class PagoReportComponent implements OnInit, OnDestroy {
     } else if (value.length === 1) {
       return value[0].calculo;
     } else {
-      return value.reduce((a, b) => {
-        return a.calculo + b.calculo;
+      return value.map(x => x.calculo).reduce((a, b) => {
+        return a + b;
       });
     }
   }

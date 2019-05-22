@@ -12,8 +12,8 @@ export class PagoPipe implements PipeTransform {
     } else if (value.length === 1) {
       return value[0].calculo.toFixed(1);
     } else {
-      return (value.reduce((a, b) => {
-        return a.calculo + b.calculo;
+      return (value.map(x => x.calculo).reduce((a, b) => {
+        return a + b;
       })).toFixed(1);
     }
   }

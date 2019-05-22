@@ -106,7 +106,7 @@ interface Report  {
           <span class="spacer">
           </span>
           <span>
-            Resultados -> ({{p?.integrantes.length}})
+            Resultados ({{p?.integrantes.length}})
           </span>
         </mat-toolbar>
         <mat-card class='pago-card'>
@@ -265,6 +265,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
     proyecto.map(data => {
       data.integrantes.map(integrante => {
         const sumPay = this.getPago(integrante.pagos);
+
         if (sumPay > 0) {
           rows.push([
             i++,
@@ -424,8 +425,8 @@ export class PagoReportComponent implements OnInit, OnDestroy {
     } else if (value.length === 1) {
       return value[0].calculo.toFixed(1);
     } else {
-      return (value.reduce((a, b) => {
-        return a.calculo + b.calculo;
+      return (value.map(x => x.calculo).reduce((a, b) => {
+        return a + b;
       })).toFixed(1);
     }
   }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpLinkServer: 'http://localhost:5000/graphql',
+  httpLinkServer: 'http://gespro.upr.edu.cu:5000/graphql',
   wsLinkServer: 'ws://localhost:5000/subscriptions',
   downloadLinkServer: 'http://localhost:5000/download',
   directoryLink: "http://directorio.upr.edu.cu/search",
