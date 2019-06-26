@@ -376,7 +376,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                   pagoProyecto.push(pago);
                   proyecto.push({
                     code: integrante.proyecto.codigo,
-                    pago: pago
+                    pago: parseFloat(pago.toFixed(1))
                   });
                 }
               });
