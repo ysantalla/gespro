@@ -112,47 +112,47 @@ interface Report  {
 
           <mat-card-content>
 
-          <mat-grid-list cols="5" rowHeight="40px">
+          <mat-grid-list cols="7" rowHeight="80px">
 
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
               <h3 class="mat-h3">No.</h3>
             </mat-grid-tile>
 
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
               <h3 class="mat-h3">Nombre de Profesor</h3>
             </mat-grid-tile>
 
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
               <h3 class="mat-h3">Número del Trabajador </h3>
             </mat-grid-tile>
 
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
               <h3 class="mat-h3">Pagos Acumulados por Semestre</h3>
             </mat-grid-tile>
 
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="3">
               <h3 class="mat-h3">Pagos por proyecto</h3>
             </mat-grid-tile>
 
             <div *ngFor="let r of report">
 
-              <mat-grid-tile>
+              <mat-grid-tile [colspan]="1">
                 <span>{{r.number}}</span>
               </mat-grid-tile>
 
-              <mat-grid-tile>
+              <mat-grid-tile [colspan]="1">
                 <span>{{r.fullname}}</span>
               </mat-grid-tile>
 
-              <mat-grid-tile>
+              <mat-grid-tile [colspan]="1">
                 <span>{{r.employeeNumber}} </span>
               </mat-grid-tile>
 
-              <mat-grid-tile>
+              <mat-grid-tile [colspan]="1">
                 <span>{{r.pago}} </span>
               </mat-grid-tile>
 
-              <mat-grid-tile>
+              <mat-grid-tile [colspan]="3">
                 <span>{{r.proyecto | json}} </span>
               </mat-grid-tile>
 
