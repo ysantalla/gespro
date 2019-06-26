@@ -16,6 +16,7 @@ interface Report  {
   fullname: string;
   employeeNumber: string;
   pago: any;
+  proyecto: any;
 }
 
 @Component({
@@ -111,7 +112,7 @@ interface Report  {
 
           <mat-card-content>
 
-          <mat-grid-list cols="4" rowHeight="40px">
+          <mat-grid-list cols="5" rowHeight="40px">
 
             <mat-grid-tile>
               <h3 class="mat-h3">No.</h3>
@@ -127,6 +128,10 @@ interface Report  {
 
             <mat-grid-tile>
               <h3 class="mat-h3">Pagos Acumulados por Semestre</h3>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <h3 class="mat-h3">Pagos por proyecto</h3>
             </mat-grid-tile>
 
             <div *ngFor="let r of report">
@@ -145,6 +150,10 @@ interface Report  {
 
               <mat-grid-tile>
                 <span>{{r.pago}} </span>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <span>{{r.proyecto | json}} </span>
               </mat-grid-tile>
 
             </div>
@@ -358,11 +367,17 @@ export class PagoReportComponent implements OnInit, OnDestroy {
 
             data.users.filter((user: any) => {
               const pagoProyecto: number[] = [];
+              const proyecto: any[] = [];
               let flag = false;
               user.integrantes.filter((integrante: any) => {
                 if (integrante.proyecto.estado === 'HABILITADO') {
                   flag = true;
-                  pagoProyecto.push(this.getPago(integrante.pagos));
+                  const pago = this.getPago(integrante.pagos);
+                  pagoProyecto.push(pago);
+                  proyecto.push({
+                    code: integrante.proyecto.codigo,
+                    pago: pago
+                  });
                 }
               });
 
@@ -372,7 +387,8 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                   number: i++,
                   employeeNumber: user.employeeNumber,
                   fullname: user.fullname,
-                  pago: parseFloat(sumPay.toFixed(1))
+                  pago: parseFloat(sumPay.toFixed(1)),
+                  proyecto: proyecto
                 });
               }
             });
