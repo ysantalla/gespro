@@ -321,7 +321,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
 
       const pagoReport = gql`
         query users {
-          users {
+          users (orderBy: fullname_ASC)  {
             id
             fullname
             employeeNumber
