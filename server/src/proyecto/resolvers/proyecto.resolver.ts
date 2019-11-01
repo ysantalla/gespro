@@ -53,7 +53,6 @@ export class ProyectoResolver {
   }
 
   @Query('proyectosConnection')
-  @Roles('ADMIN', 'ESPECIALISTA', 'JPROYECTO', 'PROFESOR')
   @UseGuards(RolesGuard)
   async proyectosConnection(
     @Args('where') where: ProyectoWhereInput
