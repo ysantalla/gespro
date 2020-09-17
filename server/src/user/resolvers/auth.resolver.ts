@@ -83,19 +83,31 @@ export class AuthResolver {
           user: newUser,
         };
       } else {
+
+        let data: any;
+
+        if (responseAD.data['0']) {
+
+          data = {
+            username: (responseAD.data['0'].samaccountname['0']).trim(),
+            firstname: (responseAD.data['0'].givenname['0']).trim(),
+            lastname: (responseAD.data['0'].sn['0']).trim(),
+            fullname: `${(responseAD.data['0'].givenname['0']).trim()} ${(responseAD.data['0'].sn['0']).trim()}`,
+            email: (responseAD.data['0'].mail['0']).trim(),
+          }
+
+          if (responseAD.data['0'].employeenumber) {
+            data['employeeNumber'] = (responseAD.data['0'].employeenumber['0']).trim();
+          }
+
+        }        
+
         const updateUser = await this.db.prisma.updateUser(
           {
             where: {
               username,
           },
-            data: {
-              username: (responseAD.data['0'].samaccountname['0']).trim(),
-              firstname: (responseAD.data['0'].givenname['0']).trim(),
-              lastname: (responseAD.data['0'].sn['0']).trim(),
-              fullname: `${(responseAD.data['0'].givenname['0']).trim()} ${(responseAD.data['0'].sn['0']).trim()}`,
-              email: (responseAD.data['0'].mail['0']).trim(),
-              employeeNumber: (responseAD.data['0'].employeenumber['0']).trim(),
-            },
+            data: data,
           }).$fragment(fragment);
 
         return {
