@@ -342,7 +342,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                 estado
               }
               jefeProyecto
-              pagos(where: {horas_gt: 10, mes: {nombre_in: ${mes}}, anno: {numero: ${annoForm.numero}}}) {
+              pagos(where: {horas_gt: 9, mes: {nombre_in: ${mes}}, anno: {numero: ${annoForm.numero}}}) {
                 id
                 calculo
                 mes {
