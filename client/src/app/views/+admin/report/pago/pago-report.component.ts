@@ -52,6 +52,7 @@ interface Report  {
 
                 <mat-form-field class="full-width">
                   <mat-select placeholder="Escoja un Semestre" formControlName="semestre">
+                    <mat-option value="YEAR">Anual</mat-option>
                     <mat-option value="PS">Primer Semestre</mat-option>
                     <mat-option value="SS">Segundo Semestre</mat-option>
                   </mat-select>
@@ -235,7 +236,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
 
     this.reportPagoForm = this.formBuilder.group(
       {
-        semestre: ['', Validators.required],
+        semestre: [''],
         anno: ['', Validators.required],
       }
     );
@@ -245,7 +246,12 @@ export class PagoReportComponent implements OnInit, OnDestroy {
   exportarPDF(): void {
 
     this.loading = true;
-    const semestre = (this.reportPagoForm.value.semestre === 'PS') ? '1er Semestre' : '2do Semestre';
+
+    let text = 'Anual';
+
+    if (this.reportPagoForm.value.semestre !== 'YEAR') {
+      text = (this.reportPagoForm.value.semestre === 'PS') ? '1er Semestre' : '2do Semestre';
+    }
 
     const dd = {
       info: {
@@ -264,7 +270,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
       header: {
         columns: [
           {text: 'Reporte de Pago', fontSize: 25, margin: [30, 30, 30, 300], alignment: 'left'},
-          {text: `${semestre}/${this.reportPagoForm.value.anno.numero}`, margin: [30, 30], alignment: 'right'}]
+          {text: `${text}/${this.reportPagoForm.value.anno.numero}`, margin: [30, 30], alignment: 'right'}]
       },
       footer: function(currentPage, pageCount) { return currentPage.toString() + ' de ' + pageCount; },
       content: [
@@ -313,9 +319,11 @@ export class PagoReportComponent implements OnInit, OnDestroy {
       const semestreForm = this.reportPagoForm.value.semestre;
       const annoForm = this.reportPagoForm.value.anno;
 
-      let mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO]';
+      let mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]';
 
-      if (semestreForm === 'SS') {
+      if (semestreForm === 'PS') {
+        let mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO]';
+      }else if (semestreForm === 'SS') {
         mes = '[JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]';
       }
 
