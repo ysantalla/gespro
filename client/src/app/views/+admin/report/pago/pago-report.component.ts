@@ -322,7 +322,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
       let mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]';
 
       if (semestreForm === 'PS') {
-        let mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO]';
+        mes = '[ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO]';
       }else if (semestreForm === 'SS') {
         mes = '[JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]';
       }
