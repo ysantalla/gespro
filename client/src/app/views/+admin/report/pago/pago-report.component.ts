@@ -58,6 +58,13 @@ interface Report  {
                   </mat-select>
                 </mat-form-field>
 
+                <mat-form-field class="full-width">
+                  <mat-select placeholder="Escoja un horas" formControlName="hours">
+                    <mat-option value="horas_gt: 9">Mayor igual que 10</mat-option>
+                    <mat-option value="horas_lt: 10">Menor que 10</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
               </mat-card-content>
 
               <mat-card-actions>
@@ -237,6 +244,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
     this.reportPagoForm = this.formBuilder.group(
       {
         semestre: [''],
+        hours: [''],
         anno: ['', Validators.required],
       }
     );
@@ -327,6 +335,8 @@ export class PagoReportComponent implements OnInit, OnDestroy {
         mes = '[JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]';
       }
 
+      const hours  = this.reportPagoForm.value.hours;
+
       const pagoReport = gql`
         query users {
           users (orderBy: fullname_ASC)  {
@@ -342,7 +352,7 @@ export class PagoReportComponent implements OnInit, OnDestroy {
                 estado
               }
               jefeProyecto
-              pagos(where: {horas_gt: 9, mes: {nombre_in: ${mes}}, anno: {numero: ${annoForm.numero}}}) {
+              pagos(where: {${hours}, mes: {nombre_in: ${mes}}, anno: {numero: ${annoForm.numero}}}) {
                 id
                 calculo
                 mes {
